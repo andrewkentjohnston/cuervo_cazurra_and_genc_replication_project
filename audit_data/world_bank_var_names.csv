@@ -1,0 +1,11 @@
+﻿old_name,new_name
+Control of Corruption: Estimate,control_of_corruption
+Fixed broadband subscriptions (per 100 people),broadband_per_capita
+Fixed telephone subscriptions (per 100 people),phones_per_capita
+GNI per capita (constant 2015 US$),gni_per_capita
+Government Effectiveness: Estimate,govt_effectiveness
+Mobile cellular subscriptions (per 100 people),mobiles_per_capita
+Political Stability and Absence of Violence/Terrorism: Estimate,pol_stability
+Regulatory Quality: Estimate,reg_quality
+Rule of Law: Estimate,rule_of_law
+Voice and Accountability: Estimate,voice_and_acc
