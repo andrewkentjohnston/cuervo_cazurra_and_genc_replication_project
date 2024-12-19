@@ -1,4 +1,4 @@
-,country,year,prop_emne,prop_emne_excl_nat_res,prop_emne_excl_col_link,prop_emne_excl_qst_source,voice_and_acc,pol_stability,govt_effectiveness,reg_quality,rule_of_law,control_of_corruption,gni_per_capita,broadband_per_capita,mobiles_per_capita,phones_per_capita,geographic_proximity,colonial_link
+observation,country,year,prop_emne,prop_emne_excl_nat_res,prop_emne_excl_col_link,prop_emne_excl_qst_source,voice_and_acc,pol_stability,govt_effectiveness,reg_quality,rule_of_law,control_of_corruption,gni_per_capita,broadband_per_capita,mobiles_per_capita,phones_per_capita,geographic_proximity,colonial_link
 0,afghanistan,2017,0.5,0.5,0.5,0.5,-1.037788033,-2.662156105,-1.290252805,-1.339695096,-1.520713925,-1.540352702,,0.0253627,62.37109623,0.329,False,False
 1,afghanistan,2018,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,-0.990814269,-2.794973612,-1.388972163,-1.369762778,-1.583736897,-1.531909704,,0.0257279,67.13641492,0.333,True,False
 2,angola,2017,0.625,0.5714285714285714,0.625,0.625,-1.140292645,-0.321580082,-0.971013606,-0.969250917,-1.0038656,-1.483337283,2862.96378,0.290319,44.59350803,1.04,False,False

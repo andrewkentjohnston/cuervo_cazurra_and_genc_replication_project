@@ -1,0 +1,177 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:11:21
+
+. xttobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+
+Fitting comparison model:
+
+Fitting constant-only model:
+
+Iteration 0:  Log likelihood =  -37.46989  
+Iteration 1:  Log likelihood = -34.577441  
+Iteration 2:  Log likelihood = -34.512776  
+Iteration 3:  Log likelihood = -34.512727  
+Iteration 4:  Log likelihood = -34.512727  
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -29.444341  
+Iteration 1:  Log likelihood = -27.100769  
+Iteration 2:  Log likelihood = -27.079758  
+Iteration 3:  Log likelihood = -27.079753  
+Iteration 4:  Log likelihood = -27.079753  
+
+Obtaining starting values for full model:
+
+Iteration 0:  Log likelihood = -4.1156741
+Iteration 1:  Log likelihood =  -3.927182
+Iteration 2:  Log likelihood = -3.9198461
+Iteration 3:  Log likelihood = -3.9198398
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -30.671844  (not concave)
+Iteration 1:  Log likelihood = -27.416271  
+Iteration 2:  Log likelihood =  -27.09236  (not concave)
+Iteration 3:  Log likelihood = -27.083569  
+Iteration 4:  Log likelihood = -27.079756  
+Iteration 5:  Log likelihood = -27.079753  
+
+Random-effects tobit regression                     Number of obs     =     50
+                                                           Uncensored =     36
+Limits: Lower = 0                                       Left-censored =      5
+        Upper = 1                                      Right-censored =      9
+
+Group variable: country_id                          Number of groups  =     25
+Random effects u_i ~ Gaussian                       Obs per group:
+                                                                  min =      2
+                                                                  avg =    2.0
+                                                                  max =      2
+
+Integration method: mvaghermite                     Integration pts.  =     12
+
+                                                    Wald chi2(5)      =  15.32
+Log likelihood = -27.079753                         Prob > chi2       = 0.0091
+
+--------------------------------------------------------------------------------------
+           prop_emne | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------------+----------------------------------------------------------------
+      gni_per_capita |  -.0000488   .0000996    -0.49   0.624     -.000244    .0001463
+broadband_per_capita |   .1627357   .1240098     1.31   0.189     -.080319    .4057903
+  mobiles_per_capita |  -.0026456   .0016119    -1.64   0.101    -.0058049    .0005137
+geographic_proximity |   .0086014   .1125695     0.08   0.939    -.2120307    .2292336
+       colonial_link |  -.3710611   .1083472    -3.42   0.001    -.5834178   -.1587045
+               _cons |   .8979617   .1628684     5.51   0.000     .5787455    1.217178
+---------------------+----------------------------------------------------------------
+            /sigma_u |   1.66e-16   .3477563     0.00   1.000    -.6815899    .6815899
+            /sigma_e |   .3475926   .0444646     7.82   0.000     .2604436    .4347416
+---------------------+----------------------------------------------------------------
+                 rho |   2.27e-31   9.54e-16                             0           1
+--------------------------------------------------------------------------------------
+LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
+
+
+. 
+. * Store the results of the random effects model
+
+. estimates store re_model
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:11:21
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:11:21
+
+. tobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+
+Refining starting values:
+
+Grid node 0:  Log likelihood = -30.671844
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -30.671844  
+Iteration 1:  Log likelihood = -27.261158  
+Iteration 2:  Log likelihood = -27.081678  
+Iteration 3:  Log likelihood = -27.079754  
+Iteration 4:  Log likelihood = -27.079753  
+
+Tobit regression                                    Number of obs     =     50
+                                                           Uncensored =     36
+Limits: Lower = 0                                       Left-censored =      5
+        Upper = 1                                      Right-censored =      9
+
+                                                    LR chi2(5)        =  14.87
+                                                    Prob > chi2       = 0.0110
+Log likelihood = -27.079753                         Pseudo R2         = 0.2154
+
+--------------------------------------------------------------------------------------
+           prop_emne | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+---------------------+----------------------------------------------------------------
+      gni_per_capita |  -.0000488   .0000996    -0.49   0.626    -.0002494    .0001517
+broadband_per_capita |   .1627357   .1240098     1.31   0.196    -.0870328    .4125042
+  mobiles_per_capita |  -.0026456   .0016119    -1.64   0.108    -.0058922     .000601
+geographic_proximity |   .0086014   .1125695     0.08   0.939    -.2181252    .2353281
+       colonial_link |  -.3710612   .1083472    -3.42   0.001    -.5892837   -.1528386
+               _cons |   .8979618   .1628685     5.51   0.000     .5699279    1.225996
+---------------------+----------------------------------------------------------------
+     var(e.prop_emne)|   .1208206   .0309111                      .0721691    .2022697
+--------------------------------------------------------------------------------------
+
+. 
+. * Store the results of the pooled Tobit model for later comparison
+
+. estimates store pooled_model
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:11:21
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:11:21
+
+. summarize prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+   prop_emne |         50    .5426522    .3040829          0          1
+gni_per_ca~a |         50    1008.908    630.6912   278.1263   2862.964
+broadband_~a |         50    .3647574    .5393082   .0011483    2.33941
+mobiles_pe~a |         50    73.54248    33.06652   23.52311   128.0767
+geographic~y |         50         .38    .4903144          0          1
+-------------+---------------------------------------------------------
+colonial_l~k |         50         .42    .4985694          0          1
+
+. pwcorr prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, star(0.05)
+
+             | prop_~ne gni_pe~a broadb~a mobile~a geogra~y coloni~k
+-------------+------------------------------------------------------
+   prop_emne |   1.0000 
+gni_per_ca~a |   0.0514   1.0000 
+broadband_~a |   0.1033   0.5075*  1.0000 
+mobiles_pe~a |  -0.2036   0.1053   0.0731   1.0000 
+geographic~y |   0.0784  -0.0732   0.2504   0.1079   1.0000 
+colonial_l~k |  -0.4250* -0.1058   0.1252   0.0858   0.0017   1.0000 
+
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:11:21
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
