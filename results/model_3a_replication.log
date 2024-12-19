@@ -1,0 +1,187 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:56:32
+
+. xttobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+
+Fitting comparison model:
+
+Fitting constant-only model:
+
+Iteration 0:  Log likelihood = -37.636871  
+Iteration 1:  Log likelihood = -34.109465  
+Iteration 2:  Log likelihood = -34.009316  
+Iteration 3:  Log likelihood = -34.009181  
+Iteration 4:  Log likelihood = -34.009181  
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -32.872075  
+Iteration 1:  Log likelihood = -29.917211  
+Iteration 2:  Log likelihood = -29.875444  
+Iteration 3:  Log likelihood = -29.875428  
+Iteration 4:  Log likelihood = -29.875428  
+
+Obtaining starting values for full model:
+
+Iteration 0:  Log likelihood = -6.5225853
+Iteration 1:  Log likelihood = -6.3263687
+Iteration 2:  Log likelihood = -6.3178406
+Iteration 3:  Log likelihood = -6.3178319
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -34.257439  (not concave)
+Iteration 1:  Log likelihood = -30.368901  (not concave)
+Iteration 2:  Log likelihood = -30.143849  (not concave)
+Iteration 3:  Log likelihood = -30.070598  (not concave)
+Iteration 4:  Log likelihood = -30.020587  (not concave)
+Iteration 5:  Log likelihood = -29.983952  (not concave)
+Iteration 6:  Log likelihood = -29.957581  (not concave)
+Iteration 7:  Log likelihood = -29.937287  (not concave)
+Iteration 8:  Log likelihood = -27.672695  
+Iteration 9:  Log likelihood = -27.258169  
+Iteration 10: Log likelihood = -27.258169  (backed up)
+Iteration 11: Log likelihood = -26.365558  
+Iteration 12: Log likelihood = -26.260997  
+Iteration 13: Log likelihood = -26.257097  
+Iteration 14: Log likelihood = -26.257084  
+Iteration 15: Log likelihood = -26.257084  
+
+Random-effects tobit regression                     Number of obs     =     48
+                                                           Uncensored =     33
+Limits: Lower = 0                                       Left-censored =      4
+        Upper = 1                                      Right-censored =     11
+
+Group variable: country_id                          Number of groups  =     24
+Random effects u_i ~ Gaussian                       Obs per group:
+                                                                  min =      2
+                                                                  avg =    2.0
+                                                                  max =      2
+
+Integration method: mvaghermite                     Integration pts.  =     12
+
+                                                    Wald chi2(5)      =   7.72
+Log likelihood = -26.257084                         Prob > chi2       = 0.1726
+
+-----------------------------------------------------------------------------------------
+prop_emne_excl_col_link | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+------------------------+----------------------------------------------------------------
+         gni_per_capita |   -.000034   .0001162    -0.29   0.770    -.0002617    .0001937
+   broadband_per_capita |   .2355427   .1484894     1.59   0.113    -.0554913    .5265767
+     mobiles_per_capita |  -.0039315   .0019099    -2.06   0.040    -.0076749   -.0001881
+   geographic_proximity |   .0386841   .1260122     0.31   0.759    -.2082953    .2856635
+          colonial_link |  -.1655283   .1218253    -1.36   0.174    -.4043015    .0732449
+                  _cons |   .9217602   .1877098     4.91   0.000     .5538558    1.289665
+------------------------+----------------------------------------------------------------
+               /sigma_u |   1.35e-07   6.73e-08     2.00   0.046     2.69e-09    2.66e-07
+               /sigma_e |   .3822088   .0516649     7.40   0.000     .2809474    .4834701
+------------------------+----------------------------------------------------------------
+                    rho |   1.24e-13   1.28e-13                      1.57e-14    9.10e-13
+-----------------------------------------------------------------------------------------
+LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
+
+
+. 
+. * Store the results of the random effects model
+
+. estimates store re_model
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:56:34
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:56:34
+
+. tobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+
+Refining starting values:
+
+Grid node 0:  Log likelihood = -34.257439
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -34.257439  
+Iteration 1:  Log likelihood = -30.173404  
+Iteration 2:  Log likelihood = -29.876261  
+Iteration 3:  Log likelihood = -29.875428  
+Iteration 4:  Log likelihood = -29.875428  
+
+Tobit regression                                    Number of obs     =     48
+                                                           Uncensored =     33
+Limits: Lower = 0                                       Left-censored =      4
+        Upper = 1                                      Right-censored =     11
+
+                                                    LR chi2(5)        =   8.27
+                                                    Prob > chi2       = 0.1421
+Log likelihood = -29.875428                         Pseudo R2         = 0.1215
+
+------------------------------------------------------------------------------------------------
+       prop_emne_excl_col_link | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------------------------+----------------------------------------------------------------
+                gni_per_capita |   -.000034   .0001162    -0.29   0.771    -.0002683    .0002003
+          broadband_per_capita |   .2355427   .1484894     1.59   0.120    -.0639148    .5350002
+            mobiles_per_capita |  -.0039315   .0019099    -2.06   0.046    -.0077833   -.0000798
+          geographic_proximity |   .0386841   .1260122     0.31   0.760    -.2154437     .292812
+                 colonial_link |  -.1655283   .1218253    -1.36   0.181    -.4112125    .0801558
+                         _cons |   .9217601   .1877098     4.91   0.000     .5432073    1.300313
+-------------------------------+----------------------------------------------------------------
+ var(e.prop_emne_excl_col_link)|   .1460835   .0394936                      .0846875    .2519901
+------------------------------------------------------------------------------------------------
+
+. 
+. * Store the results of the pooled Tobit model for later comparison
+
+. estimates store pooled_model
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:56:34
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ opened on:  19 Dec 2024, 12:56:34
+
+. summarize prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+prop_emne_~k |         48    .6012922     .298237          0          1
+gni_per_ca~a |         48    974.8018    620.4823   278.1263   2862.964
+broadband_~a |         48    .3732603    .5485439   .0011483    2.33941
+mobiles_pe~a |         48    71.45973    32.07878   23.52311   128.0767
+geographic~y |         48    .3958333     .494204          0          1
+-------------+---------------------------------------------------------
+colonial_l~k |         48    .4166667    .4982238          0          1
+
+. pwcorr prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, star(0.05)
+
+             | prop_e~k gni_pe~a broadb~a mobile~a geogra~y coloni~k
+-------------+------------------------------------------------------
+prop_emne_~k |   1.0000 
+gni_per_ca~a |   0.0711   1.0000 
+broadband_~a |   0.1741   0.5505*  1.0000 
+mobiles_pe~a |  -0.2234   0.0239   0.1025   1.0000 
+geographic~y |   0.0957  -0.0320   0.2420   0.1681   1.0000 
+colonial_l~k |  -0.1514  -0.1216   0.1227   0.0789   0.0072   1.0000 
+
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3a_replication.log
+  log type:  text
+ closed on:  19 Dec 2024, 12:56:34
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

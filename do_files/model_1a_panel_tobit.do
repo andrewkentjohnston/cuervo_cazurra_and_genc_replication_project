@@ -66,5 +66,3 @@ summarize prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geogr
 pwcorr prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, star(0.05)
 log close
 
-* Save cleaned dataset for future use
-save "../processed_data/panel_dataset_cleaned.dta", replace
