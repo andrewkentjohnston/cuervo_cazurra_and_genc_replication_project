@@ -1,11 +1,11 @@
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
   log type:  text
- opened on:  19 Dec 2024, 13:02:43
+ opened on:  19 Dec 2024, 21:41:10
 
-. xttobit prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geographic_
-> proximity colonial_link, ll(0) ul(1) re
+. xttobit prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capit
+> a geographic_proximity colonial_link, ll(0) ul(1) re
 
 Fitting comparison model:
 
@@ -87,20 +87,27 @@ LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
 . estimates store re_model
 
 . 
+. * Export Tobit results to CSV (Excel-compatible)
+
+. esttab re_model using "../results/model_1b_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
+(file ../results/model_1b_results.csv not found)
+(output written to ../results/model_1b_results.csv)
+
+. 
 . log close
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
   log type:  text
- closed on:  19 Dec 2024, 13:02:43
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  19 Dec 2024, 21:41:10
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
   log type:  text
- opened on:  19 Dec 2024, 13:02:43
+ opened on:  19 Dec 2024, 21:41:10
 
-. tobit prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geographic_pr
-> oximity colonial_link, ll(0) ul(1)
+. tobit prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita 
+> geographic_proximity colonial_link, ll(0) ul(1)
 
 Refining starting values:
 
@@ -152,63 +159,5 @@ control_of_corruption |    .366567   .2122917     1.73   0.092    -.0628335    .
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
   log type:  text
- closed on:  19 Dec 2024, 13:02:43
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
-  log type:  text
- opened on:  19 Dec 2024, 13:02:43
-
-. summarize prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geographi
-> c_proximity colonial_link
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-   prop_emne |         50    .5426522    .3040829          0          1
-voice_and_~c |         50   -.6506996     .599852  -1.575842   .4083861
-pol_stabil~y |         50   -.7763648    .6931311  -2.339439   .2061908
-govt_effec~s |         50   -.9963213    .4569956  -2.170481   .1787704
- reg_quality |         50   -.7691492    .3514532  -1.500688   .0843835
--------------+---------------------------------------------------------
- rule_of_law |         50   -.8506458    .4592438  -1.850578   .1168476
-control_of~n |         50   -.7706786    .5027427  -1.511605   .6184556
-gni_per_ca~a |         50    1008.908    630.6912   278.1263   2862.964
-broadband_~a |         50    .3647574    .5393082   .0011483    2.33941
-mobiles_pe~a |         50    73.54248    33.06652   23.52311   128.0767
--------------+---------------------------------------------------------
-geographic~y |         50         .38    .4903144          0          1
-colonial_l~k |         50         .42    .4985694          0          1
-
-. pwcorr prop_emne voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geographic_p
-> roximity colonial_link, star(0.05)
-
-             | prop_~ne voice_~c pol_st~y govt_e~s reg_qu~y rule_o~w contro~n
--------------+---------------------------------------------------------------
-   prop_emne |   1.0000 
-voice_and_~c |  -0.2987*  1.0000 
-pol_stabil~y |  -0.1768   0.4718*  1.0000 
-govt_effec~s |  -0.3674*  0.3340*  0.5161*  1.0000 
- reg_quality |  -0.3874*  0.4481*  0.6185*  0.8621*  1.0000 
- rule_of_law |  -0.3743*  0.4574*  0.5443*  0.7974*  0.8183*  1.0000 
-control_of~n |  -0.2889*  0.4777*  0.4098*  0.7721*  0.7882*  0.8597*  1.0000 
-gni_per_ca~a |   0.0514   0.0316   0.4500*  0.0766   0.0427   0.0837  -0.0218 
-broadband_~a |   0.1033  -0.0423   0.2441   0.1706   0.1945   0.1674   0.1198 
-mobiles_pe~a |  -0.2036   0.4922*  0.5054*  0.3968*  0.5120*  0.3780*  0.3524*
-geographic~y |   0.0784  -0.0164  -0.0158   0.1692   0.0892   0.0986   0.1330 
-colonial_l~k |  -0.4250*  0.3974*  0.3972*  0.3229*  0.4493*  0.2791*  0.2918*
-
-             | gni_pe~a broadb~a mobile~a geogra~y coloni~k
--------------+---------------------------------------------
-gni_per_ca~a |   1.0000 
-broadband_~a |   0.5075*  1.0000 
-mobiles_pe~a |   0.1053   0.0731   1.0000 
-geographic~y |  -0.0732   0.2504   0.1079   1.0000 
-colonial_l~k |  -0.1058   0.1252   0.0858   0.0017   1.0000 
-
-. log close
-      name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_1b_replication.log
-  log type:  text
- closed on:  19 Dec 2024, 13:02:43
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  19 Dec 2024, 21:41:11
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -12,15 +12,8 @@ import delimited using "../processed_data/panel_dataset.csv", clear
 * ----- Data Cleaning and Filtering -----
 
 * Convert `colonial_link` and `geographic_proximity` to dummy variables
-* Check unique values in these variables
-list geographic_proximity colonial_link if missing(geographic_proximity) | missing(colonial_link)
-
 gen colonial_link_dummy = (colonial_link == "True")
 gen geographic_proximity_dummy = (geographic_proximity == "True")
-
-* Verify the conversion
-tabulate colonial_link_dummy
-tabulate geographic_proximity_dummy
 
 * Drop the original string variables and rename the dummies
 drop colonial_link geographic_proximity
@@ -47,6 +40,9 @@ xttobit prop_emne_excl_nat_res gni_per_capita broadband_per_capita mobiles_per_c
 * Store the results of the random effects model
 estimates store re_model
 
+* Export Tobit results to CSV (Excel-compatible)
+esttab re_model using "../results/model_2a_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
+
 log close
 
 * Estimating a pooled Tobit model
@@ -60,8 +56,5 @@ log close
 
 * ----- Summary Statistics and Correlation Matrix -----
 
-* Log the summary statistics and correlation matrix
-log using "../results/model_2a_replication.log", append text
-summarize prop_emne_excl_nat_res gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link
-pwcorr prop_emne_excl_nat_res gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, star(0.05)
-log close
+* Generate and export the correlation matrix using asdoc
+asdoc pwcorr prop_emne_excl_nat_res gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, save(../results/model_2a_correlation_matrix.doc) replace title(Correlation Matrix)

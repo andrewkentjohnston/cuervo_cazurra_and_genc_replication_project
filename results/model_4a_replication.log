@@ -1,8 +1,8 @@
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
   log type:  text
- opened on:  19 Dec 2024, 12:59:56
+ opened on:  19 Dec 2024, 21:49:52
 
 . xttobit prop_emne_excl_qst_source gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
 
@@ -81,17 +81,23 @@ LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
 . estimates store re_model
 
 . 
+. * Export Tobit results to CSV (Excel-compatible)
+
+. esttab re_model using "../results/model_4a_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
+(output written to ../results/model_4a_results.csv)
+
+. 
 . log close
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
   log type:  text
- closed on:  19 Dec 2024, 12:59:56
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  19 Dec 2024, 21:49:52
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
   log type:  text
- opened on:  19 Dec 2024, 12:59:56
+ opened on:  19 Dec 2024, 21:49:52
 
 . tobit prop_emne_excl_qst_source gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
 
@@ -139,40 +145,5 @@ Log likelihood = -26.275763                         Pseudo R2         = 0.2272
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
   log type:  text
- closed on:  19 Dec 2024, 12:59:56
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
-  log type:  text
- opened on:  19 Dec 2024, 12:59:56
-
-. summarize prop_emne_excl_qst_source gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link
-
-    Variable |        Obs        Mean    Std. dev.       Min        Max
--------------+---------------------------------------------------------
-prop_emne_~e |         50    .5478295    .2988644          0          1
-gni_per_ca~a |         50    1008.908    630.6912   278.1263   2862.964
-broadband_~a |         50    .3647574    .5393082   .0011483    2.33941
-mobiles_pe~a |         50    73.54248    33.06652   23.52311   128.0767
-geographic~y |         50         .38    .4903144          0          1
--------------+---------------------------------------------------------
-colonial_l~k |         50         .42    .4985694          0          1
-
-. pwcorr prop_emne_excl_qst_source gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, star(0.05)
-
-             | prop_~ce gni_pe~a broadb~a mobile~a geogra~y coloni~k
--------------+------------------------------------------------------
-prop_emne_~e |   1.0000 
-gni_per_ca~a |   0.0418   1.0000 
-broadband_~a |   0.0973   0.5075*  1.0000 
-mobiles_pe~a |  -0.2330   0.1053   0.0731   1.0000 
-geographic~y |   0.0550  -0.0732   0.2504   0.1079   1.0000 
-colonial_l~k |  -0.4264* -0.1058   0.1252   0.0858   0.0017   1.0000 
-
-. log close
-      name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_4a_replication.log
-  log type:  text
- closed on:  19 Dec 2024, 12:59:56
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  19 Dec 2024, 21:49:52
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

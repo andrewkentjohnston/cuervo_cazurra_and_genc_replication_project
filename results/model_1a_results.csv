@@ -1,0 +1,35 @@
+="Random Effects Panel Tobit Results"
+
+="",="(1)"
+="",="prop_emne"
+
+="prop_emne",=""
+="gni_per_capita",="-0.0000"
+="",="(0.0001)"
+
+="broadband_per_capita",="0.1627"
+="",="(0.1240)"
+
+="mobiles_per_capita",="-0.0026"
+="",="(0.0016)"
+
+="geographic_proximity",="0.0086"
+="",="(0.1126)"
+
+="colonial_link",="-0.3711***"
+="",="(0.1083)"
+
+="Constant",="0.8980***"
+="",="(0.1629)"
+
+="/",=""
+="sigma_u",="0.0000"
+="",="(0.3478)"
+
+="sigma_e",="0.3476***"
+="",="(0.0445)"
+
+="Observations",="50"
+
+="Standard errors in parentheses"
+="* p<0.10, ** p<0.05, *** p<0.01"
