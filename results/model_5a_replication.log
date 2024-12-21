@@ -1,0 +1,149 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_5a_replication.log
+  log type:  text
+ opened on:  20 Dec 2024, 23:18:26
+
+. xttobit prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+
+Fitting comparison model:
+
+Fitting constant-only model:
+
+Iteration 0:  Log likelihood = -56.218521  
+Iteration 1:  Log likelihood = -49.495476  
+Iteration 2:  Log likelihood = -48.943797  
+Iteration 3:  Log likelihood = -48.943794  
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -50.872134  
+Iteration 1:  Log likelihood = -45.217664  
+Iteration 2:  Log likelihood = -44.923114  
+Iteration 3:  Log likelihood = -44.922729  
+Iteration 4:  Log likelihood = -44.922729  
+
+Obtaining starting values for full model:
+
+Iteration 0:  Log likelihood =  -22.58989
+Iteration 1:  Log likelihood = -22.393673
+Iteration 2:  Log likelihood = -22.385145
+Iteration 3:  Log likelihood = -22.385136
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -52.888241  (not concave)
+Iteration 1:  Log likelihood = -45.418941  (not concave)
+Iteration 2:  Log likelihood = -44.988444  
+Iteration 3:  Log likelihood = -44.923032  
+Iteration 4:  Log likelihood = -44.922729  
+Iteration 5:  Log likelihood = -44.922729  
+
+Random-effects tobit regression                     Number of obs     =     48
+                                                           Uncensored =     26
+Limits: Lower = 0                                       Left-censored =      9
+        Upper = 1                                      Right-censored =     13
+
+Group variable: country_id                          Number of groups  =     24
+Random effects u_i ~ Gaussian                       Obs per group:
+                                                                  min =      2
+                                                                  avg =    2.0
+                                                                  max =      2
+
+Integration method: mvaghermite                     Integration pts.  =     12
+
+                                                    Wald chi2(5)      =   8.00
+Log likelihood = -44.922729                         Prob > chi2       = 0.1563
+
+--------------------------------------------------------------------------------------
+   prop_emne_capital | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------------+----------------------------------------------------------------
+      gni_per_capita |  -.0001185   .0001916    -0.62   0.536     -.000494    .0002571
+broadband_per_capita |   .1101539   .2222123     0.50   0.620    -.3253743    .5456821
+  mobiles_per_capita |   .0004638   .0031646     0.15   0.883    -.0057388    .0066663
+geographic_proximity |   .1029442   .2241682     0.46   0.646    -.3364173    .5423057
+       colonial_link |   -.607371   .2197827    -2.76   0.006    -1.038137   -.1766048
+               _cons |   .8437495   .2882501     2.93   0.003     .2787898    1.408709
+---------------------+----------------------------------------------------------------
+            /sigma_u |   3.89e-16   .4590704     0.00   1.000    -.8997614    .8997614
+            /sigma_e |   .6400782   .0999622     6.40   0.000     .4441559    .8360006
+---------------------+----------------------------------------------------------------
+                 rho |   3.69e-31   8.71e-16                             0           1
+--------------------------------------------------------------------------------------
+LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
+
+
+. 
+. * Store the results of the random effects model
+
+. estimates store re_model
+
+. 
+. * Export Tobit results to CSV (Excel-compatible)
+
+. esttab re_model using "../results/model_5a_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
+(file ../results/model_5a_results.csv not found)
+(output written to ../results/model_5a_results.csv)
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_5a_replication.log
+  log type:  text
+ closed on:  20 Dec 2024, 23:18:26
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_5a_replication.log
+  log type:  text
+ opened on:  20 Dec 2024, 23:18:26
+
+. tobit prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+
+Refining starting values:
+
+Grid node 0:  Log likelihood = -52.888241
+
+Fitting full model:
+
+Iteration 0:  Log likelihood = -52.888241  
+Iteration 1:  Log likelihood = -45.546358  
+Iteration 2:  Log likelihood = -44.939212  
+Iteration 3:  Log likelihood = -44.922746  
+Iteration 4:  Log likelihood = -44.922729  
+Iteration 5:  Log likelihood = -44.922729  
+
+Tobit regression                                    Number of obs     =     48
+                                                           Uncensored =     26
+Limits: Lower = 0                                       Left-censored =      9
+        Upper = 1                                      Right-censored =     13
+
+                                                    LR chi2(5)        =   8.04
+                                                    Prob > chi2       = 0.1539
+Log likelihood = -44.922729                         Pseudo R2         = 0.0822
+
+------------------------------------------------------------------------------------------
+       prop_emne_capital | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------------------+----------------------------------------------------------------
+          gni_per_capita |  -.0001185   .0001916    -0.62   0.540    -.0005049     .000268
+    broadband_per_capita |   .1101539   .2222124     0.50   0.623      -.33798    .5582878
+      mobiles_per_capita |   .0004638   .0031646     0.15   0.884    -.0059184    .0068459
+    geographic_proximity |   .1029442   .2241682     0.46   0.648    -.3491339    .5550224
+           colonial_link |   -.607371   .2197827    -2.76   0.008    -1.050605   -.1641369
+                   _cons |   .8437495   .2882501     2.93   0.005     .2624379    1.425061
+-------------------------+----------------------------------------------------------------
+ var(e.prop_emne_capital)|   .4097002   .1279673                      .2182245    .7691814
+------------------------------------------------------------------------------------------
+
+. 
+. * Store the results of the pooled Tobit model for later comparison
+
+. estimates store pooled_model
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_5a_replication.log
+  log type:  text
+ closed on:  20 Dec 2024, 23:18:26
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
