@@ -4,48 +4,45 @@
 ="",="prop_emne_capital_excl_col_link"
 
 ="prop_emne_capital_excl_col_link",=""
-="voice_and_acc",="0.2039"
-="",="(0.2198)"
+="voice_and_acc",="0.1823"
+="",="(0.2201)"
 
-="pol_stability",="0.6778**"
-="",="(0.2776)"
+="pol_stability",="0.6626**"
+="",="(0.2808)"
 
-="govt_effectiveness",="-0.6291"
-="",="(0.5614)"
+="govt_effectiveness",="-0.6344"
+="",="(0.5725)"
 
-="reg_quality",="-1.3778"
-="",="(0.9065)"
+="reg_quality",="-1.5941*"
+="",="(0.8751)"
 
-="rule_of_law",="-1.2970*"
-="",="(0.7114)"
+="rule_of_law",="-1.2543*"
+="",="(0.7207)"
 
-="control_of_corruption",="1.5681***"
-="",="(0.6053)"
+="control_of_corruption",="1.6260***"
+="",="(0.6139)"
 
 ="gni_per_capita",="-0.0001"
 ="",="(0.0002)"
 
-="broadband_per_capita",="0.2341"
-="",="(0.2426)"
+="broadband_per_capita",="0.1950"
+="",="(0.2391)"
 
-="mobiles_per_capita",="0.0013"
-="",="(0.0044)"
+="mobiles_per_capita",="0.0024"
+="",="(0.0042)"
 
-="geographic_proximity",="0.0893"
-="",="(0.2429)"
+="geographic_proximity",="0.0668"
+="",="(0.2436)"
 
-="colonial_link",="-0.1904"
-="",="(0.2621)"
-
-="Constant",="-0.1493"
-="",="(0.6722)"
+="Constant",="-0.4078"
+="",="(0.5883)"
 
 ="/",=""
 ="sigma_u",="0.0000"
-="",="(0.2689)"
+="",="(0.2879)"
 
-="sigma_e",="0.5977***"
-="",="(0.1017)"
+="sigma_e",="0.6059***"
+="",="(0.1030)"
 
 ="Observations",="44"
 

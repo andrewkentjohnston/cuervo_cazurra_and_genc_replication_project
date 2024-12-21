@@ -2,9 +2,9 @@
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_7a_replication.log
   log type:  text
- opened on:  20 Dec 2024, 23:24:54
+ opened on:  20 Dec 2024, 23:51:18
 
-. xttobit prop_emne_capital_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+. xttobit prop_emne_capital_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(1) re
 
 Fitting comparison model:
 
@@ -18,28 +18,27 @@ Iteration 4:  Log likelihood = -44.762005
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -50.393729  
-Iteration 1:  Log likelihood = -44.327486  
-Iteration 2:  Log likelihood = -43.820753  
-Iteration 3:  Log likelihood = -43.820625  
-Iteration 4:  Log likelihood = -43.820625  
+Iteration 0:  Log likelihood = -51.289366  
+Iteration 1:  Log likelihood = -44.941556  
+Iteration 2:  Log likelihood = -44.378151  
+Iteration 3:  Log likelihood = -44.377886  
+Iteration 4:  Log likelihood = -44.377886  
 
 Obtaining starting values for full model:
 
-Iteration 0:  Log likelihood = -22.370117
-Iteration 1:  Log likelihood = -22.139889
-Iteration 2:  Log likelihood = -21.843193
-Iteration 3:  Log likelihood = -21.820752
-Iteration 4:  Log likelihood =  -21.82069
+Iteration 0:  Log likelihood = -23.199066
+Iteration 1:  Log likelihood = -22.847273
+Iteration 2:  Log likelihood = -22.784582
+Iteration 3:  Log likelihood = -22.783889
+Iteration 4:  Log likelihood = -22.783889
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -52.236961  (not concave)
-Iteration 1:  Log likelihood = -45.035765  
-Iteration 2:  Log likelihood = -43.548466  
-Iteration 3:  Log likelihood = -43.498284  
-Iteration 4:  Log likelihood = -43.498041  
-Iteration 5:  Log likelihood = -43.498041  
+Iteration 0:  Log likelihood = -52.653085  
+Iteration 1:  Log likelihood = -44.013171  
+Iteration 2:  Log likelihood = -43.948133  
+Iteration 3:  Log likelihood = -43.947815  
+Iteration 4:  Log likelihood = -43.947815  
 
 Random-effects tobit regression                     Number of obs     =     44
                                                            Uncensored =     22
@@ -54,25 +53,24 @@ Random effects u_i ~ Gaussian                       Obs per group:
 
 Integration method: mvaghermite                     Integration pts.  =     12
 
-                                                    Wald chi2(5)      =   1.54
-Log likelihood = -43.498041                         Prob > chi2       = 0.9090
+                                                    Wald chi2(4)      =   0.63
+Log likelihood = -43.947815                         Prob > chi2       = 0.9598
 
 -------------------------------------------------------------------------------------------------
 prop_emne_capital_excl_col_link | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 --------------------------------+----------------------------------------------------------------
-                 gni_per_capita |  -.0000245   .0002548    -0.10   0.923    -.0005239    .0004748
-           broadband_per_capita |   .2068142   .2995213     0.69   0.490    -.3802367    .7938651
-             mobiles_per_capita |  -.0018492   .0041563    -0.44   0.656    -.0099955     .006297
-           geographic_proximity |   .1020565   .2829472     0.36   0.718    -.4525098    .6566228
-                  colonial_link |   -.250347   .2617744    -0.96   0.339    -.7634154    .2627213
-                          _cons |   .8470599   .3767477     2.25   0.025     .1086479    1.585472
+                 gni_per_capita |   3.68e-06   .0002617     0.01   0.989    -.0005093    .0005167
+           broadband_per_capita |   .1539635    .301559     0.51   0.610    -.4370813    .7450083
+             mobiles_per_capita |  -.0020473   .0042871    -0.48   0.633    -.0104498    .0063552
+           geographic_proximity |    .083604   .2904159     0.29   0.773    -.4856008    .6528087
+                          _cons |   .7841407   .3828353     2.05   0.041     .0337973    1.534484
 --------------------------------+----------------------------------------------------------------
-                       /sigma_u |   .3347722    .219863     1.52   0.128    -.0961514    .7656959
-                       /sigma_e |   .6387768   .1417276     4.51   0.000     .3609958    .9165579
+                       /sigma_u |   .3655682   .2111419     1.73   0.083    -.0482623    .7793987
+                       /sigma_e |   .6423186    .142055     4.52   0.000     .3638959    .9207413
 --------------------------------+----------------------------------------------------------------
-                            rho |   .2154791   .2611411                      .0055906    .8319444
+                            rho |   .2446665    .254666                      .0112951     .815289
 -------------------------------------------------------------------------------------------------
-LR test of sigma_u=0: chibar2(01) = 0.65               Prob >= chibar2 = 0.211
+LR test of sigma_u=0: chibar2(01) = 0.86               Prob >= chibar2 = 0.177
 
 
 . 
@@ -84,7 +82,6 @@ LR test of sigma_u=0: chibar2(01) = 0.65               Prob >= chibar2 = 0.211
 . * Export Tobit results to CSV (Excel-compatible)
 
 . esttab re_model using "../results/model_7a_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
-(file ../results/model_7a_results.csv not found)
 (output written to ../results/model_7a_results.csv)
 
 . 
@@ -92,49 +89,48 @@ LR test of sigma_u=0: chibar2(01) = 0.65               Prob >= chibar2 = 0.211
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_7a_replication.log
   log type:  text
- closed on:  20 Dec 2024, 23:24:54
+ closed on:  20 Dec 2024, 23:51:18
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_7a_replication.log
   log type:  text
- opened on:  20 Dec 2024, 23:24:54
+ opened on:  20 Dec 2024, 23:51:18
 
-. tobit prop_emne_capital_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+. tobit prop_emne_capital_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(1)
 
 Refining starting values:
 
-Grid node 0:  Log likelihood = -52.642149
+Grid node 0:  Log likelihood = -53.177236
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -52.642149  
-Iteration 1:  Log likelihood = -44.495605  
-Iteration 2:  Log likelihood = -43.850085  
-Iteration 3:  Log likelihood = -43.820655  
-Iteration 4:  Log likelihood = -43.820625  
-Iteration 5:  Log likelihood = -43.820625  
+Iteration 0:  Log likelihood = -53.177236  
+Iteration 1:  Log likelihood = -44.994309  
+Iteration 2:  Log likelihood = -44.402562  
+Iteration 3:  Log likelihood = -44.377898  
+Iteration 4:  Log likelihood = -44.377886  
+Iteration 5:  Log likelihood = -44.377886  
 
 Tobit regression                                    Number of obs     =     44
                                                            Uncensored =     22
 Limits: Lower = 0                                       Left-censored =      7
         Upper = 1                                      Right-censored =     15
 
-                                                    LR chi2(5)        =   1.88
-                                                    Prob > chi2       = 0.8651
-Log likelihood = -43.820625                         Pseudo R2         = 0.0210
+                                                    LR chi2(4)        =   0.77
+                                                    Prob > chi2       = 0.9427
+Log likelihood = -44.377886                         Pseudo R2         = 0.0086
 
 --------------------------------------------------------------------------------------------------------
        prop_emne_capital_excl_col_link | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 ---------------------------------------+----------------------------------------------------------------
-                        gni_per_capita |  -.0000589   .0002314    -0.25   0.800     -.000527    .0004092
-                  broadband_per_capita |   .2552385   .2778815     0.92   0.364    -.3068299     .817307
-                    mobiles_per_capita |   -.001575   .0038425    -0.41   0.684    -.0093471    .0061971
-                  geographic_proximity |   .0546505   .2653185     0.21   0.838    -.4820069    .5913079
-                         colonial_link |  -.2755374    .258931    -1.06   0.294    -.7992746    .2481999
-                                 _cons |    .866309    .347598     2.49   0.017     .1632256    1.569392
+                        gni_per_capita |  -.0000317   .0002362    -0.13   0.894     -.000509    .0004457
+                  broadband_per_capita |   .2008843   .2792228     0.72   0.476     -.363446    .7652147
+                    mobiles_per_capita |  -.0017151   .0039263    -0.44   0.665    -.0096504    .0062202
+                  geographic_proximity |    .024848   .2701732     0.09   0.927    -.5211923    .5708883
+                                 _cons |   .7955764   .3486119     2.28   0.028     .0910054    1.500147
 ---------------------------------------+----------------------------------------------------------------
- var(e.prop_emne_capital_excl_col_link)|    .518571   .1796189                      .2573589    1.044906
+ var(e.prop_emne_capital_excl_col_link)|   .5450247   .1887071                      .2707138    1.097291
 --------------------------------------------------------------------------------------------------------
 
 . 
@@ -147,5 +143,5 @@ Log likelihood = -43.820625                         Pseudo R2         = 0.0210
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_7a_replication.log
   log type:  text
- closed on:  20 Dec 2024, 23:24:54
+ closed on:  20 Dec 2024, 23:51:18
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------

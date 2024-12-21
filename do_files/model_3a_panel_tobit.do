@@ -1,27 +1,25 @@
-* Description: Cuervo-Cazurra and Genc (2008) replication - model 3a (updated data version)
+* Description: Greenfield panel analysis - model 3a (amended)
 * Author: Andrew Kent Johnston
-* Date: Dec 19, 2024
+* Date: Dec 20, 2024
 
 * Clear the workspace
 clear all
 set more off
 
 * ----- Data Import -----
-import delimited using "../processed_data/panel_dataset.csv", clear
+import delimited using "../processed_data/greenfield_panel_dataset.csv", clear
 
 * ----- Data Cleaning and Filtering -----
 
-* Convert `colonial_link` and `geographic_proximity` to dummy variables
-gen colonial_link_dummy = (colonial_link == "True")
+* Convert `geographic_proximity` to a dummy variable
 gen geographic_proximity_dummy = (geographic_proximity == "True")
 
-* Drop the original string variables and rename the dummies
-drop colonial_link geographic_proximity
-rename colonial_link_dummy colonial_link
+* Drop the original string variable and rename the dummy
+drop geographic_proximity
 rename geographic_proximity_dummy geographic_proximity
 
 * Dropping entities with incomplete observations for both years
-egen row_missing = rowmiss(prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link)
+egen row_missing = rowmiss(prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity)
 bysort country: egen total_missing = total(row_missing)
 drop if total_missing > 0
 
@@ -35,7 +33,7 @@ xtset country_id year
 
 * Running a random effects panel Tobit model with bounds
 log using "../results/model_3a_replication.log", replace text
-xttobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+xttobit prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(1) re
 
 * Store the results of the random effects model
 estimates store re_model
@@ -47,7 +45,7 @@ log close
 
 * Estimating a pooled Tobit model
 log using "../results/model_3a_replication.log", append text
-tobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+tobit prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(1)
 
 * Store the results of the pooled Tobit model for later comparison
 estimates store pooled_model
@@ -57,4 +55,4 @@ log close
 * ----- Summary Statistics and Correlation Matrix -----
 
 * Generate and export the correlation matrix using asdoc
-asdoc pwcorr prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, save(../results/model_3a_correlation_matrix.doc) replace title(Correlation Matrix)
+asdoc pwcorr prop_emne_capital gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, save(../results/model_3a_correlation_matrix.doc) replace title(Correlation Matrix)
