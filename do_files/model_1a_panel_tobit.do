@@ -28,6 +28,10 @@ drop if total_missing > 0
 * Generating a numeric ID for countries
 egen country_id = group(country)
 
+* Transforming the dependent variable into a percentage
+replace prop_emne = prop_emne * 100
+
+
 * ----- Data Analysis -----
 
 * Declaring the data as panel data using the new country ID
@@ -35,7 +39,7 @@ xtset country_id year
 
 * Running a random effects panel Tobit model with bounds
 log using "../results/model_1a_replication.log", replace text
-xttobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1) re
+xttobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(100) re
 
 * Store the results of the random effects model
 estimates store re_model
@@ -47,7 +51,7 @@ log close
 
 * Estimating a pooled Tobit model
 log using "../results/model_1a_replication.log", append text
-tobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(1)
+tobit prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(100)
 
 * Store the results of the pooled Tobit model for later comparison
 estimates store pooled_model
@@ -58,3 +62,4 @@ log close
 
 * Generate and export the correlation matrix using asdoc
 asdoc pwcorr prop_emne gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, save(../results/model_1a_correlation_matrix.doc) replace title(Correlation Matrix)
+

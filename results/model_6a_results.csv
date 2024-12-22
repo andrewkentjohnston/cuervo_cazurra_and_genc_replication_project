@@ -4,30 +4,30 @@
 ="",="prop_emne_capital_excl_nat_res"
 
 ="prop_emne_capital_excl_nat_res",=""
-="gni_per_capita",="-0.0001"
-="",="(0.0002)"
+="gni_per_capita",="-0.0149"
+="",="(0.0196)"
 
-="broadband_per_capita",="0.0258"
-="",="(0.2315)"
+="broadband_per_capita",="2.5806"
+="",="(23.1532)"
 
-="mobiles_per_capita",="0.0010"
-="",="(0.0032)"
+="mobiles_per_capita",="0.1037"
+="",="(0.3241)"
 
-="geographic_proximity",="0.1309"
-="",="(0.2290)"
+="geographic_proximity",="13.0856"
+="",="(22.8954)"
 
-="colonial_link",="-0.6582***"
-="",="(0.2256)"
+="colonial_link",="-65.8237***"
+="",="(22.5629)"
 
-="Constant",="0.8515***"
-="",="(0.2927)"
+="Constant",="85.1489***"
+="",="(29.2697)"
 
 ="/",=""
 ="sigma_u",="0.0000"
-="",="(0.3389)"
+="",="(33.8935)"
 
-="sigma_e",="0.6491***"
-="",="(0.1039)"
+="sigma_e",="64.9105***"
+="",="(10.3937)"
 
 ="Observations",="48"
 

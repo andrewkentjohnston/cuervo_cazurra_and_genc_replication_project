@@ -1,30 +1,33 @@
 ="Random Effects Panel Tobit Results"
 
 ="",="(1)"
-="",="prop_emne_capital"
+="",="prop_emne_excl_col_link"
 
-="prop_emne_capital",=""
-="gni_per_capita",="-0.0001"
-="",="(0.0002)"
+="prop_emne_excl_col_link",=""
+="gni_per_capita",="-0.0030"
+="",="(0.0121)"
 
-="broadband_per_capita",="-0.0089"
-="",="(0.2364)"
+="broadband_per_capita",="22.5911"
+="",="(15.4127)"
 
-="mobiles_per_capita",="-0.0000"
-="",="(0.0034)"
+="mobiles_per_capita",="-0.3938**"
+="",="(0.1990)"
 
-="geographic_proximity",="0.0471"
-="",="(0.2423)"
+="geographic_proximity",="4.8422"
+="",="(12.9916)"
 
-="Constant",="0.6942**"
-="",="(0.3069)"
+="colonial_link",="-17.8035"
+="",="(12.8157)"
+
+="Constant",="92.4175***"
+="",="(19.5076)"
 
 ="/",=""
-="sigma_u",="0.0000"
-="",="(0.2981)"
+="sigma_u",="12.0495"
+="",="(14.7831)"
 
-="sigma_e",="0.7018***"
-="",="(0.1105)"
+="sigma_e",="36.3170***"
+="",="(6.5467)"
 
 ="Observations",="48"
 

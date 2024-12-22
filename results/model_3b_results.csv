@@ -1,48 +1,51 @@
 ="Random Effects Panel Tobit Results"
 
 ="",="(1)"
-="",="prop_emne_capital"
+="",="prop_emne_excl_col_link"
 
-="prop_emne_capital",=""
-="voice_and_acc",="0.0467"
-="",="(0.2106)"
+="prop_emne_excl_col_link",=""
+="voice_and_acc",="7.7803"
+="",="(12.1712)"
 
-="pol_stability",="0.2602"
-="",="(0.2362)"
+="pol_stability",="34.3879**"
+="",="(13.5753)"
 
-="govt_effectiveness",="-0.6294"
-="",="(0.5341)"
+="govt_effectiveness",="-30.2106"
+="",="(26.1893)"
 
-="reg_quality",="-0.9932"
-="",="(0.7459)"
+="reg_quality",="-14.3942"
+="",="(42.2618)"
 
-="rule_of_law",="-0.1487"
-="",="(0.5291)"
+="rule_of_law",="-74.7987**"
+="",="(35.7345)"
 
-="control_of_corruption",="0.6722"
-="",="(0.4491)"
+="control_of_corruption",="58.0942*"
+="",="(29.9804)"
 
-="gni_per_capita",="-0.0002"
-="",="(0.0002)"
+="gni_per_capita",="-0.0087"
+="",="(0.0126)"
 
-="broadband_per_capita",="0.0853"
-="",="(0.2220)"
+="broadband_per_capita",="25.6112*"
+="",="(13.7180)"
 
-="mobiles_per_capita",="0.0023"
-="",="(0.0039)"
+="mobiles_per_capita",="-0.3722"
+="",="(0.2341)"
 
-="geographic_proximity",="0.1530"
-="",="(0.2342)"
+="geographic_proximity",="3.1829"
+="",="(11.7225)"
 
-="Constant",="-0.2139"
-="",="(0.5344)"
+="colonial_link",="-25.6527*"
+="",="(14.5848)"
+
+="Constant",="74.6831*"
+="",="(38.8088)"
 
 ="/",=""
 ="sigma_u",="0.0000"
-="",="(0.1700)"
+="",="(11.1134)"
 
-="sigma_e",="0.6278***"
-="",="(0.0981)"
+="sigma_e",="33.2426***"
+="",="(4.4549)"
 
 ="Observations",="48"
 

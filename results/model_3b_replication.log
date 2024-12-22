@@ -1,50 +1,53 @@
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3b_replication.log
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
+> ults/model_3b_replication.log
   log type:  text
- opened on:  20 Dec 2024, 23:48:52
+ opened on:  21 Dec 2024, 19:25:01
 
-. xttobit prop_emne_capital voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_p
-> er_capita geographic_proximity, ll(0) ul(1) re
+. xttobit prop_emne_excl_col_link voice_and_acc pol_stability govt_effectiveness reg_quality ru
+> le_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geogra
+> phic_proximity colonial_link, ll(0) ul(100) re
 
 Fitting comparison model:
 
 Fitting constant-only model:
 
-Iteration 0:  Log likelihood = -56.218521  
-Iteration 1:  Log likelihood = -49.495476  
-Iteration 2:  Log likelihood = -48.943797  
-Iteration 3:  Log likelihood = -48.943794  
+Iteration 0:  Log likelihood = -189.60749  
+Iteration 1:  Log likelihood = -186.08008  
+Iteration 2:  Log likelihood = -185.97993  
+Iteration 3:  Log likelihood =  -185.9798  
+Iteration 4:  Log likelihood =  -185.9798  
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -48.832818  
-Iteration 1:  Log likelihood = -44.058797  
-Iteration 2:  Log likelihood = -43.901531  
-Iteration 3:  Log likelihood = -43.901122  
-Iteration 4:  Log likelihood = -43.901122  
+Iteration 0:  Log likelihood = -178.17424  
+Iteration 1:  Log likelihood = -175.38441  
+Iteration 2:  Log likelihood = -175.34683  
+Iteration 3:  Log likelihood = -175.34677  
+Iteration 4:  Log likelihood = -175.34677  
 
 Obtaining starting values for full model:
 
-Iteration 0:  Log likelihood = -22.350436
-Iteration 1:  Log likelihood = -21.794439
-Iteration 2:  Log likelihood =  -21.60697
-Iteration 3:  Log likelihood = -21.603643
-Iteration 4:  Log likelihood = -21.603642
+Iteration 0:  Log likelihood = -222.37616
+Iteration 1:  Log likelihood = -221.79027
+Iteration 2:  Log likelihood = -221.48025
+Iteration 3:  Log likelihood =  -221.4718
+Iteration 4:  Log likelihood = -221.47179
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -52.345948  (not concave)
-Iteration 1:  Log likelihood = -45.418814  
-Iteration 2:  Log likelihood = -43.970859  
-Iteration 3:  Log likelihood = -43.901166  
-Iteration 4:  Log likelihood = -43.901122  
-Iteration 5:  Log likelihood = -43.901122  
+Iteration 0:  Log likelihood = -180.48257  (not concave)
+Iteration 1:  Log likelihood =  -176.9335  
+Iteration 2:  Log likelihood = -175.39623  
+Iteration 3:  Log likelihood = -175.34687  
+Iteration 4:  Log likelihood = -175.34677  
+Iteration 5:  Log likelihood = -175.34677  
 
 Random-effects tobit regression                     Number of obs     =     48
-                                                           Uncensored =     26
-Limits: Lower = 0                                       Left-censored =      9
-        Upper = 1                                      Right-censored =     13
+                                                           Uncensored =     33
+Limits: Lower =   0                                     Left-censored =      4
+        Upper = 100                                    Right-censored =     11
 
 Group variable: country_id                          Number of groups  =     24
 Random effects u_i ~ Gaussian                       Obs per group:
@@ -54,108 +57,111 @@ Random effects u_i ~ Gaussian                       Obs per group:
 
 Integration method: mvaghermite                     Integration pts.  =     12
 
-                                                    Wald chi2(10)     =   9.46
-Log likelihood = -43.901122                         Prob > chi2       = 0.4895
+                                                    Wald chi2(11)     =  19.23
+Log likelihood = -175.34677                         Prob > chi2       = 0.0570
 
----------------------------------------------------------------------------------------
-    prop_emne_capital | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
-----------------------+----------------------------------------------------------------
-        voice_and_acc |   .0466824   .2106203     0.22   0.825    -.3661259    .4594906
-        pol_stability |   .2601943   .2362002     1.10   0.271    -.2027497    .7231382
-   govt_effectiveness |  -.6293687    .534092    -1.18   0.239     -1.67617    .4174324
-          reg_quality |  -.9932211   .7459252    -1.33   0.183    -2.455208    .4687654
-          rule_of_law |  -.1487469   .5291009    -0.28   0.779    -1.185766    .8882718
-control_of_corruption |    .672244   .4491294     1.50   0.134    -.2080334    1.552521
-       gni_per_capita |  -.0001648   .0002255    -0.73   0.465    -.0006069    .0002772
- broadband_per_capita |   .0852986    .222021     0.38   0.701    -.3498545    .5204517
-   mobiles_per_capita |   .0023394   .0038967     0.60   0.548     -.005298    .0099767
- geographic_proximity |   .1529994   .2342086     0.65   0.514     -.306041    .6120398
-                _cons |  -.2139331   .5344221    -0.40   0.689    -1.261381     .833515
-----------------------+----------------------------------------------------------------
-             /sigma_u |   3.72e-18    .169968     0.00   1.000    -.3331312    .3331312
-             /sigma_e |   .6278045   .0980998     6.40   0.000     .4355324    .8200766
-----------------------+----------------------------------------------------------------
-                  rho |   3.51e-35   3.21e-18                             0           1
----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+prop_emne_excl_col_link | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+------------------------+----------------------------------------------------------------
+          voice_and_acc |   7.780262   12.17118     0.64   0.523    -16.07481    31.63533
+          pol_stability |    34.3879   13.57529     2.53   0.011     7.780826    60.99497
+     govt_effectiveness |  -30.21063   26.18934    -1.15   0.249    -81.54079    21.11954
+            reg_quality |  -14.39422   42.26179    -0.34   0.733     -97.2258    68.43736
+            rule_of_law |  -74.79874   35.73452    -2.09   0.036    -144.8371   -4.760365
+  control_of_corruption |   58.09423   29.98038     1.94   0.053    -.6662364    116.8547
+         gni_per_capita |  -.0086911   .0126477    -0.69   0.492    -.0334802    .0160981
+   broadband_per_capita |   25.61118   13.71798     1.87   0.062    -1.275567    52.49793
+     mobiles_per_capita |  -.3721552   .2341197    -1.59   0.112    -.8310214    .0867111
+   geographic_proximity |   3.182886   11.72252     0.27   0.786    -19.79283     26.1586
+          colonial_link |  -25.65269   14.58483    -1.76   0.079    -54.23842    2.933049
+                  _cons |   74.68314   38.80884     1.92   0.054    -1.380798    150.7471
+------------------------+----------------------------------------------------------------
+               /sigma_u |   2.88e-15   11.11343     0.00   1.000    -21.78192    21.78192
+               /sigma_e |   33.24263   4.454944     7.46   0.000      24.5111    41.97416
+------------------------+----------------------------------------------------------------
+                    rho |   7.49e-33   5.79e-17                             0           1
+-----------------------------------------------------------------------------------------
 LR test of sigma_u=0: chibar2(01) = 0.00               Prob >= chibar2 = 1.000
 
 
 . 
 . * Store the results of the random effects model
-
 . estimates store re_model
 
 . 
 . * Export Tobit results to CSV (Excel-compatible)
-
-. esttab re_model using "../results/model_3b_results.csv", replace title("Random Effects Panel Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
+. esttab re_model using "../results/model_3b_results.csv", replace title("Random Effects Panel 
+> Tobit Results") label se b(%9.4f) star(* 0.10 ** 0.05 *** 0.01)
 (output written to ../results/model_3b_results.csv)
 
 . 
 . log close
       name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3b_replication.log
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
+> ults/model_3b_replication.log
   log type:  text
- closed on:  20 Dec 2024, 23:48:52
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  21 Dec 2024, 19:25:02
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3b_replication.log
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
+> ults/model_3b_replication.log
   log type:  text
- opened on:  20 Dec 2024, 23:48:52
+ opened on:  21 Dec 2024, 19:25:02
 
-. tobit prop_emne_capital voice_and_acc pol_stability govt_effectiveness reg_quality rule_of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per
-> _capita geographic_proximity, ll(0) ul(1)
+. tobit prop_emne_excl_col_link voice_and_acc pol_stability govt_effectiveness reg_quality rule
+> _of_law control_of_corruption gni_per_capita broadband_per_capita mobiles_per_capita geograph
+> ic_proximity colonial_link, ll(0) ul(100)
 
 Refining starting values:
 
-Grid node 0:  Log likelihood = -52.345948
+Grid node 0:  Log likelihood = -180.48257
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -52.345948  
-Iteration 1:  Log likelihood = -44.631593  
-Iteration 2:  Log likelihood = -43.928539  
-Iteration 3:  Log likelihood = -43.901143  
-Iteration 4:  Log likelihood = -43.901122  
-Iteration 5:  Log likelihood = -43.901122  
+Iteration 0:  Log likelihood = -180.48257  
+Iteration 1:  Log likelihood = -175.69247  
+Iteration 2:  Log likelihood = -175.34861  
+Iteration 3:  Log likelihood = -175.34678  
+Iteration 4:  Log likelihood = -175.34677  
 
 Tobit regression                                    Number of obs     =     48
-                                                           Uncensored =     26
-Limits: Lower = 0                                       Left-censored =      9
-        Upper = 1                                      Right-censored =     13
+                                                           Uncensored =     33
+Limits: Lower =   0                                     Left-censored =      4
+        Upper = 100                                    Right-censored =     11
 
-                                                    LR chi2(10)       =  10.09
-                                                    Prob > chi2       = 0.4330
-Log likelihood = -43.901122                         Pseudo R2         = 0.1030
+                                                    LR chi2(11)       =  21.27
+                                                    Prob > chi2       = 0.0307
+Log likelihood = -175.34677                         Pseudo R2         = 0.0572
 
-------------------------------------------------------------------------------------------
-       prop_emne_capital | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------------------+----------------------------------------------------------------
-           voice_and_acc |   .0466824   .2106203     0.22   0.826    -.3796962    .4730609
-           pol_stability |   .2601943   .2362002     1.10   0.278    -.2179681    .7383566
-      govt_effectiveness |  -.6293687    .534092    -1.18   0.246    -1.710581    .4518441
-             reg_quality |  -.9932211   .7459252    -1.33   0.191    -2.503268    .5168255
-             rule_of_law |  -.1487469   .5291009    -0.28   0.780    -1.219856    .9223618
-   control_of_corruption |    .672244   .4491294     1.50   0.143    -.2369709    1.581459
-          gni_per_capita |  -.0001648   .0002255    -0.73   0.469    -.0006214    .0002917
-    broadband_per_capita |   .0852986    .222021     0.38   0.703    -.3641593    .5347566
-      mobiles_per_capita |   .0023394   .0038967     0.60   0.552     -.005549    .0102277
-    geographic_proximity |   .1529994   .2342086     0.65   0.518    -.3211312    .6271299
-                   _cons |  -.2139331   .5344221    -0.40   0.691    -1.295814    .8679479
--------------------------+----------------------------------------------------------------
- var(e.prop_emne_capital)|   .3941385    .123175                      .2093578     .742008
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+     prop_emne_excl_col_link | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-----------------------------+----------------------------------------------------------------
+               voice_and_acc |   7.780261   12.17118     0.64   0.527    -16.88088    32.44141
+               pol_stability |    34.3879   13.57528     2.53   0.016     6.881756    61.89404
+          govt_effectiveness |  -30.21062   26.18934    -1.15   0.256    -83.27526    22.85402
+                 reg_quality |  -14.39422   42.26178    -0.34   0.735    -100.0247    71.23629
+                 rule_of_law |  -74.79874   35.73452    -2.09   0.043    -147.2038   -2.393726
+       control_of_corruption |   58.09423   29.98038     1.94   0.060     -2.65179    118.8402
+              gni_per_capita |  -.0086911   .0126477    -0.69   0.496    -.0343178    .0169357
+        broadband_per_capita |   25.61118   13.71798     1.87   0.070    -2.184087    53.40644
+          mobiles_per_capita |  -.3721551   .2341197    -1.59   0.120    -.8465267    .1022164
+        geographic_proximity |   3.182886   11.72252     0.27   0.788     -20.5692    26.93497
+               colonial_link |  -25.65268   14.58483    -1.76   0.087    -55.20435    3.898978
+                       _cons |   74.68314   38.80884     1.92   0.062    -3.951042    153.3173
+-----------------------------+----------------------------------------------------------------
+var(e.prop_emne_excl_col_l~k)|   1105.072    296.188                      642.0035    1902.146
+----------------------------------------------------------------------------------------------
 
 . 
 . * Store the results of the pooled Tobit model for later comparison
-
 . estimates store pooled_model
 
 . 
 . log close
       name:  <unnamed>
-       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../results/model_3b_replication.log
+       log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
+> ults/model_3b_replication.log
   log type:  text
- closed on:  20 Dec 2024, 23:48:53
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ closed on:  21 Dec 2024, 19:25:02
+-----------------------------------------------------------------------------------------------
