@@ -3,10 +3,10 @@
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
 > ults/model_3a_replication.log
   log type:  text
- opened on:  21 Dec 2024, 19:24:51
+ opened on:  26 Dec 2024, 12:42:43
 
 . xttobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geogra
-> phic_proximity colonial_link, ll(0) ul(100) re
+> phic_proximity, ll(0) ul(100) re
 
 Fitting comparison model:
 
@@ -20,38 +20,38 @@ Iteration 4:  Log likelihood =  -185.9798
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -184.84269  
-Iteration 1:  Log likelihood = -181.88783  
-Iteration 2:  Log likelihood = -181.84606  
-Iteration 3:  Log likelihood = -181.84604  
+Iteration 0:  Log likelihood = -185.88151  
+Iteration 1:  Log likelihood = -182.82184  
+Iteration 2:  Log likelihood =  -182.7713  
+Iteration 3:  Log likelihood = -182.77128  
+Iteration 4:  Log likelihood = -182.77128  
 
 Obtaining starting values for full model:
 
-Iteration 0:  Log likelihood = -227.57075
-Iteration 1:  Log likelihood = -227.37454
-Iteration 2:  Log likelihood = -227.36601
-Iteration 3:  Log likelihood =   -227.366
+Iteration 0:  Log likelihood = -228.24069
+Iteration 1:  Log likelihood = -228.10433
+Iteration 2:  Log likelihood = -228.10067
+Iteration 3:  Log likelihood = -228.10067
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -186.22805  (not concave)
-Iteration 1:  Log likelihood = -182.51914  (not concave)
-Iteration 2:  Log likelihood = -182.14172  (not concave)
-Iteration 3:  Log likelihood = -182.05224  (not concave)
-Iteration 4:  Log likelihood = -181.92214  (not concave)
-Iteration 5:  Log likelihood = -181.87885  (not concave)
-Iteration 6:  Log likelihood = -181.87217  (not concave)
-Iteration 7:  Log likelihood = -181.87201  (not concave)
-Iteration 8:  Log likelihood = -181.86143  (not concave)
-Iteration 9:  Log likelihood = -181.85747  (not concave)
-Iteration 10: Log likelihood = -181.85481  (not concave)
-Iteration 11: Log likelihood = -181.85256  (not concave)
-Iteration 12: Log likelihood = -181.84837  (not concave)
-Iteration 13: Log likelihood = -181.80508  
-Iteration 14: Log likelihood = -181.78706  
-Iteration 15: Log likelihood = -181.76065  
-Iteration 16: Log likelihood = -181.76039  
-Iteration 17: Log likelihood = -181.76039  
+Iteration 0:  Log likelihood = -187.06261  (not concave)
+Iteration 1:  Log likelihood = -183.38103  (not concave)
+Iteration 2:  Log likelihood =  -183.0109  (not concave)
+Iteration 3:  Log likelihood =  -182.9248  (not concave)
+Iteration 4:  Log likelihood = -182.83501  (not concave)
+Iteration 5:  Log likelihood = -182.81632  (not concave)
+Iteration 6:  Log likelihood = -182.80285  (not concave)
+Iteration 7:  Log likelihood = -182.80268  (not concave)
+Iteration 8:  Log likelihood = -182.79265  (not concave)
+Iteration 9:  Log likelihood = -182.77485  (not concave)
+Iteration 10: Log likelihood = -182.77269  (not concave)
+Iteration 11: Log likelihood = -182.77228  (not concave)
+Iteration 12: Log likelihood = -182.77121  (not concave)
+Iteration 13: Log likelihood = -182.76261  
+Iteration 14: Log likelihood = -182.75648  
+Iteration 15: Log likelihood = -182.75643  
+Iteration 16: Log likelihood = -182.75643  
 
 Random-effects tobit regression                     Number of obs     =     48
                                                            Uncensored =     33
@@ -66,25 +66,24 @@ Random effects u_i ~ Gaussian                       Obs per group:
 
 Integration method: mvaghermite                     Integration pts.  =     12
 
-                                                    Wald chi2(5)      =   7.42
-Log likelihood = -181.76039                         Prob > chi2       = 0.1913
+                                                    Wald chi2(4)      =   5.79
+Log likelihood = -182.75643                         Prob > chi2       = 0.2155
 
 -----------------------------------------------------------------------------------------
 prop_emne_excl_col_link | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ------------------------+----------------------------------------------------------------
-         gni_per_capita |  -.0029772   .0121409    -0.25   0.806     -.026773    .0208185
-   broadband_per_capita |   22.59112   15.41265     1.47   0.143    -7.617126    52.79936
-     mobiles_per_capita |  -.3938141   .1990036    -1.98   0.048     -.783854   -.0037742
-   geographic_proximity |   4.842176   12.99156     0.37   0.709    -20.62082    30.30517
-          colonial_link |  -17.80349    12.8157    -1.39   0.165    -42.92179    7.314818
-                  _cons |   92.41749   19.50761     4.74   0.000     54.18327    130.6517
+         gni_per_capita |   .0007607   .0117553     0.06   0.948    -.0222794    .0238007
+   broadband_per_capita |   18.69713   14.93009     1.25   0.210    -10.56531    47.95958
+     mobiles_per_capita |   -.409416   .1969763    -2.08   0.038    -.7954825   -.0233496
+   geographic_proximity |     6.1773   12.94561     0.48   0.633    -19.19564    31.55024
+                  _cons |   83.33162   18.01803     4.62   0.000     48.01694    118.6463
 ------------------------+----------------------------------------------------------------
-               /sigma_u |   12.04947    14.7831     0.82   0.415    -16.92487    41.02382
-               /sigma_e |   36.31695   6.546707     5.55   0.000     23.48564    49.14826
+               /sigma_u |   7.717579   22.47135     0.34   0.731    -36.32545    51.76061
+               /sigma_e |   38.11193   6.696184     5.69   0.000     24.98765    51.23621
 ------------------------+----------------------------------------------------------------
-                    rho |   .0991659   .2391788                      .0000354     .919427
+                    rho |   .0393901   .2285927                      1.09e-12    .9997732
 -----------------------------------------------------------------------------------------
-LR test of sigma_u=0: chibar2(01) = 0.17               Prob >= chibar2 = 0.339
+LR test of sigma_u=0: chibar2(01) = 0.03               Prob >= chibar2 = 0.432
 
 
 . 
@@ -103,50 +102,49 @@ LR test of sigma_u=0: chibar2(01) = 0.17               Prob >= chibar2 = 0.339
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
 > ults/model_3a_replication.log
   log type:  text
- closed on:  21 Dec 2024, 19:24:51
+ closed on:  26 Dec 2024, 12:42:43
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
 > ults/model_3a_replication.log
   log type:  text
- opened on:  21 Dec 2024, 19:24:51
+ opened on:  26 Dec 2024, 12:42:43
 
 . tobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geograph
-> ic_proximity colonial_link, ll(0) ul(100)
+> ic_proximity, ll(0) ul(100)
 
 Refining starting values:
 
-Grid node 0:  Log likelihood = -186.22805
+Grid node 0:  Log likelihood = -187.06261
 
 Fitting full model:
 
-Iteration 0:  Log likelihood = -186.22805  
-Iteration 1:  Log likelihood = -182.14402  
-Iteration 2:  Log likelihood = -181.84688  
-Iteration 3:  Log likelihood = -181.84604  
-Iteration 4:  Log likelihood = -181.84604  
+Iteration 0:  Log likelihood = -187.06261  
+Iteration 1:  Log likelihood = -183.03407  
+Iteration 2:  Log likelihood = -182.77562  
+Iteration 3:  Log likelihood = -182.77128  
+Iteration 4:  Log likelihood = -182.77128  
 
 Tobit regression                                    Number of obs     =     48
                                                            Uncensored =     33
 Limits: Lower =   0                                     Left-censored =      4
         Upper = 100                                    Right-censored =     11
 
-                                                    LR chi2(5)        =   8.27
-                                                    Prob > chi2       = 0.1421
-Log likelihood = -181.84604                         Pseudo R2         = 0.0222
+                                                    LR chi2(4)        =   6.42
+                                                    Prob > chi2       = 0.1701
+Log likelihood = -182.77128                         Pseudo R2         = 0.0173
 
 ----------------------------------------------------------------------------------------------
      prop_emne_excl_col_link | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -----------------------------+----------------------------------------------------------------
-              gni_per_capita |  -.0033974   .0116177    -0.29   0.771    -.0268267    .0200319
-        broadband_per_capita |   23.55427   14.84894     1.59   0.120     -6.39148    53.50002
-          mobiles_per_capita |   -.393152    .190993    -2.06   0.046     -.778326   -.0079779
-        geographic_proximity |   3.868415   12.60122     0.31   0.760    -21.54437     29.2812
-               colonial_link |  -16.55283   12.18253    -1.36   0.181    -41.12125    8.015583
-                       _cons |   92.17602   18.77098     4.91   0.000     54.32073    130.0313
+              gni_per_capita |   .0005198    .011463     0.05   0.964    -.0225824    .0236219
+        broadband_per_capita |   19.09994   14.56878     1.31   0.197    -10.26152    48.46139
+          mobiles_per_capita |  -.4084324   .1935669    -2.11   0.041     -.798541   -.0183239
+        geographic_proximity |   5.828688   12.70037     0.46   0.649    -19.76722     31.4246
+                       _cons |   83.43397   17.69259     4.72   0.000      47.7769     119.091
 -----------------------------+----------------------------------------------------------------
-var(e.prop_emne_excl_col_l~k)|   1460.835   394.9356                      846.8746    2519.901
+var(e.prop_emne_excl_col_l~k)|   1510.697    408.871                      875.5624    2606.561
 ----------------------------------------------------------------------------------------------
 
 . 
@@ -159,5 +157,5 @@ var(e.prop_emne_excl_col_l~k)|   1460.835   394.9356                      846.87
        log:  /Users/andrewjohnston/coding_projects/nov_2024_replication_project/do_files/../res
 > ults/model_3a_replication.log
   log type:  text
- closed on:  21 Dec 2024, 19:24:51
+ closed on:  26 Dec 2024, 12:42:44
 -----------------------------------------------------------------------------------------------

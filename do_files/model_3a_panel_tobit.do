@@ -38,7 +38,7 @@ xtset country_id year
 
 * Running a random effects panel Tobit model with bounds
 log using "../results/model_3a_replication.log", replace text
-xttobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(100) re
+xttobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(100) re
 
 * Store the results of the random effects model
 estimates store re_model
@@ -50,7 +50,7 @@ log close
 
 * Estimating a pooled Tobit model
 log using "../results/model_3a_replication.log", append text
-tobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, ll(0) ul(100)
+tobit prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, ll(0) ul(100)
 
 * Store the results of the pooled Tobit model for later comparison
 estimates store pooled_model
@@ -60,5 +60,5 @@ log close
 * ----- Summary Statistics and Correlation Matrix -----
 
 * Generate and export the correlation matrix using asdoc
-asdoc pwcorr prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity colonial_link, save(../results/model_3a_correlation_matrix.doc) replace title(Correlation Matrix)
+asdoc pwcorr prop_emne_excl_col_link gni_per_capita broadband_per_capita mobiles_per_capita geographic_proximity, save(../results/model_3a_correlation_matrix.doc) replace title(Correlation Matrix)
 
