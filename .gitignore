@@ -1,1 +1,15 @@
+# Ignore virtual environment
 .venv/
+
+# Ignore irrelevant folders
+archived_data/
+papers_and_manuals/
+ldcs_list_2017_2018.csv
+.gitattributes
+
+# Ignore proprietary folders
+country_spreadsheets/
+raw_data/
+processed_data/
+
+
